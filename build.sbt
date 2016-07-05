@@ -8,7 +8,7 @@ lazy val playserver = (project in file("play")).settings(
   scalaJSProjects := clients,
   libraryDependencies ++= Seq(
     "com.lihaoyi" %% "scalatags" % "0.5.5",
-    "org.webjars" % "jquery" % "1.11.1"
+    "org.webjars" % "jquery" % "3.0.0"
   )
 ).enablePlugins(PlayScala).
   aggregate(clients.map(projectToRef): _*).
@@ -18,10 +18,10 @@ lazy val scalajsclient = (project in file("scalajs")).settings(
   scalaVersion := scalaV,
   persistLauncher := true,
   persistLauncher in Test := false,
-  sourceMapsDirectories += sharedJs.base / "..",
+//  sourceMapsDirectories += sharedJs.base / "..",
   unmanagedSourceDirectories in Compile := Seq((scalaSource in Compile).value),
   libraryDependencies ++= Seq(
-    "org.scala-js" %%% "scalajs-dom" % "0.8.0",
+    "org.scala-js" %%% "scalajs-dom" % "0.8.2",
     "com.lihaoyi" %%% "scalatags" % "0.5.5"
   )
 ).enablePlugins(ScalaJSPlugin, ScalaJSPlay).
@@ -29,8 +29,8 @@ lazy val scalajsclient = (project in file("scalajs")).settings(
 
 lazy val shared = (crossProject.crossType(CrossType.Pure) in file("shared")).
   settings(scalaVersion := scalaV).
-  jsConfigure(_ enablePlugins ScalaJSPlay).
-  jsSettings(sourceMapsBase := baseDirectory.value / "..")
+  jsConfigure(_ enablePlugins ScalaJSPlay)
+//  jsSettings(sourceMapsBase := baseDirectory.value / "..")
 
 lazy val sharedJvm = shared.jvm
 lazy val sharedJs = shared.js
