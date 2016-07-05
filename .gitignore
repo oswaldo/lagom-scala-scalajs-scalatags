@@ -1,3 +1,10 @@
+libexec/
+.sbtserver*
+.cache-main
+.cache-tests
+.js
+*.sjsir
+
 *.class
 *.log
 
