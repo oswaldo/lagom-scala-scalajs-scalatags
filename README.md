@@ -1,5 +1,4 @@
-Play Scala ScalaJS template for TypeSafe Activator
+Play Scala ScalaJS ScalaTags template for TypeSafe Activator
 ==================================================
 
-Modified play-scala activator template to accomodate scalajs.
-This project derives its project structure from [play-with-scalajs-example](https://github.com/vmunier/play-with-scalajs-example)
+Modified [play-scala-scalajs](https://github.com/jimmy00784/play-scala-scalajs) activator template to accomodate scalatags.
