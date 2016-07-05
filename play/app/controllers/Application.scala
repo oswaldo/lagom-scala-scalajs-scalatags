@@ -16,19 +16,18 @@ object Application extends Controller {
 
   def indexView(message: String) = {
     val body = Seq(h2("Scalatags page generated on the server side"),
-                   ul(li("Play shouts out: ", em(message))))
-
-    //not really equivalent to the example in https://github.com/vmunier/play-with-scalajs-example/blob/master/client/src/main/scala/example/ScalaJSExample.scala
-    //as the dom is already at hand
+                   ul(li("Play shouts out: ", em(message))),
+                   h2("Scalatags content from scalajsclient"),
+                   div(id := "scalajsclientDiv"))
 
     mainView(body)
   }
 
   def mainView(content: Seq[Modifier]) = {
-    html(
-        body(content,
-             // include the Scala.js scripts that sbt-play-scalajs has copied from the "client" project to the Play public target folder
-             scripts("client")))
+    html(head(meta(charset := "UTF-8")),
+         body(content,
+              // include the Scala.js scripts that sbt-play-scalajs has copied from the "client" project to the Play public target folder
+              scripts("scalajsclient")))
   }
 
   def scripts(projectName: String) =
