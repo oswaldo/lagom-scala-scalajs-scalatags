@@ -22,3 +22,5 @@ addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.10")
 addSbtPlugin("com.vmunier" % "sbt-play-scalajs" % "0.3.1")
 
 addSbtPlugin("com.geirsson" % "sbt-scalafmt" % "0.2.10")
+
+addSbtPlugin("com.lightbend.lagom" % "lagom-sbt-plugin" % "1.0.0")

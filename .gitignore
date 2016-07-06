@@ -6,6 +6,7 @@ libexec/
 *.sjsir
 play/public/javascripts/
 logs/
+project/project/
 
 *.class
 *.log
@@ -16,6 +17,7 @@ logs/
 .lib/
 dist/*
 target/
+.target/
 lib_managed/
 src_managed/
 project/boot/
