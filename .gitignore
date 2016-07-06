@@ -5,6 +5,7 @@ libexec/
 .js
 *.sjsir
 play/public/javascripts/
+logs/
 
 *.class
 *.log

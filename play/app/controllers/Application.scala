@@ -7,8 +7,9 @@ import scalatags._
 import scalatags.Text._
 import scalatags.Text.all._
 import shared.SharedMessages
+import javax.inject.Inject
 
-object Application extends Controller {
+class Application @Inject()(env: play.Environment) extends Controller {
   def index = Action {
     Ok(indexView(SharedMessages.itWorks).toString)
       .withHeaders(CONTENT_TYPE -> MimeTypes.HTML)
@@ -34,7 +35,7 @@ object Application extends Controller {
     Seq(selectScript(projectName), launcher(projectName))
 
   def selectScript(projectName: String): TypedTag[String] = {
-    if (Play.isProd(Play.current)) {
+    if (env.isProd) {
       script(src := s"/assets/${projectName.toLowerCase}-opt.js",
              `type` := "text/javascript")
     } else {
