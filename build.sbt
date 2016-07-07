@@ -68,7 +68,7 @@ javacOptions in compile += "-parameters"
 //Needed for importing the project into Eclipse
 EclipseKeys.skipParents in ThisBuild := false
 lazy val eclipseSettings = Seq(
-  EclipseKeys.projectFlavor := EclipseProjectFlavor.Java,
+  EclipseKeys.projectFlavor := EclipseProjectFlavor.Scala,
   EclipseKeys.withBundledScalaContainers := false,
   EclipseKeys.createSrc := EclipseCreateSrc.Default + EclipseCreateSrc.Resource,
   EclipseKeys.eclipseOutput := Some(".target"),
